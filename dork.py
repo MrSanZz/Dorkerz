@@ -24,6 +24,8 @@ def enter(self):
             print(str(response) + '-' + results)
         except Timeout:
             print('Timeout' + '-' + results)
+        except:
+            continue
     print("Done..")
 if __name__ == '__main__':
     print(logo)
