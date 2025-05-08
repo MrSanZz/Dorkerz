@@ -12,12 +12,13 @@ except ModuleNotFoundError as e:
     elif 'googlesearch' in str(e):
         os.system('pip3 install google')
     else:
+        print(f"Module not found: {str(e)}")
         os.system('pip3 install requests')
 logo="""
 ,------.                ,--.                         
 |  .-.  \  ,---. ,--.--.|  |,-. ,---. ,--.--.,-----. 
 |  |  \  :| .-. ||  .--'|     /| .-. :|  .--'`-.  /  
-|  '--'  /' '-' '|  |   |  \  \\\   --.|  |    /  `-. 
+|  '--'  /' '-' '|  |   |  \  \\\\   --.|  |    /  `-. 
 `-------'  `---' `--'   `--'`--'`----'`--'   `-----' 
 """
 def enter(self):
@@ -29,8 +30,8 @@ def enter(self):
             print(str(response.status_code) + '-' + results)
         except Timeout:
             print('Timeout' + '-' + results)
-        except:
-            continue
+        except Exception as e:
+            print(e)
     print("Done..")
 if __name__ == '__main__':
     print(logo)
