@@ -25,7 +25,7 @@ def enter(self):
     global dork
     for results in search(dork, num=int(1), user_agent=UserAgent().chrome, stop=None, pause=1, start=0):
         try:
-            headers = {"User-Agent": ua.chrome}
+            headers = {"User-Agent": UserAgent().chrome}
             response = requests.get(results, headers=headers, timeout=9)
             print(str(response.status_code) + '-' + results)
         except Timeout:
